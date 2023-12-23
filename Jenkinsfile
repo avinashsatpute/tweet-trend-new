@@ -21,6 +21,7 @@ environment {
                 sh 'mvn surefire-report:report'
                  echo "----------- unit test Complted ----------"
             }
+	}    
         stage('SonarQube analysis') {
 	environment {
           scannerHome = tool 'sonar-scanner'
@@ -30,7 +31,6 @@ environment {
             sh "${scannerHome}/bin/sonar-scanner"
         }
     }
-  }  
         }
 }
 }
